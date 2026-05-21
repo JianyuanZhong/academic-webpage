@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { profile } from "@data/profile";
+---
+
+<BaseLayout title="Contact">
+  <section>
+    <p class="eyebrow">Contact</p>
+    <h1>Academic links and contact.</h1>
+    <p class="lead">{profile.affiliation}</p>
+  </section>
+
+  <section class="section grid two">
+    <div class="card">
+      <h2>Email</h2>
+      <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <p class="muted">{profile.location}</p>
+    </div>
+    <div class="card">
+      <h2>Profiles</h2>
+      <div class="link-row">
+        {profile.links.map((link) => <a class="button" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

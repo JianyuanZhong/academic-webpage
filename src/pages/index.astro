@@ -1,16 +1,106 @@
 ---
+import ExperienceCard from "@components/ExperienceCard.astro";
+import PublicationCard from "@components/PublicationCard.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { experiences } from "@data/experience";
+import { profile } from "@data/profile";
+import { projects } from "@data/projects";
+import { publications } from "@data/publications";
+import { withBase } from "@utils/paths";
+
+const selectedPublications = publications.filter((publication) => publication.selected);
+const featuredProjects = projects.slice(0, 3);
+const featuredExperience = experiences.filter((experience) =>
+  [
+    "Ant Group - InclusionAI",
+    "Foundation Model Department, Huawei Hong Kong Research Center",
+    "Quebec Artificial Intelligence Institute - Mila",
+  ].includes(experience.organization)
+);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jianyuan Zhong</title>
-  </head>
-  <body>
-    <main>
-      <h1>Jianyuan Zhong</h1>
-      <p>Academic website scaffold.</p>
-    </main>
-  </body>
-</html>
+<BaseLayout>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">{profile.title} · CUHK CSE</p>
+      <h1>{profile.tagline}</h1>
+      <p class="lead">{profile.bio}</p>
+      <div class="actions">
+        <a class="button primary" href={withBase("publications/")}>Publications</a>
+        <a class="button" href={withBase("projects/")}>Projects</a>
+        <a class="button" href={withBase("cv/")}>CV</a>
+      </div>
+    </div>
+    <img class="hero-photo" src={withBase("assets/headshot.jpg")} alt="Portrait of Jianyuan Zhong" />
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Research Focus</p>
+        <h2>Learning to reason through processes.</h2>
+      </div>
+    </div>
+    <div class="grid three">
+      {profile.researchQuestions.map((question) => <div class="card"><p>{question}</p></div>)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected Work</p>
+        <h2>Recent papers and systems.</h2>
+      </div>
+      <a class="button" href={withBase("publications/")}>All publications</a>
+    </div>
+    <div class="grid two">
+      {selectedPublications.map((publication) => <PublicationCard publication={publication} compact />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid two">
+      <div class="card news-panel">
+        <p class="eyebrow">News</p>
+        <h2>Updates</h2>
+        {profile.news.map((item) => <p><strong>{item.date}</strong> · <span class="muted">{item.text}</span></p>)}
+      </div>
+      <div class="card">
+        <p class="eyebrow">Academic Profile</p>
+        <h2>Current role</h2>
+        <p class="muted">{profile.affiliation}</p>
+        <p class="muted">{profile.location}</p>
+        <div class="link-row">
+          {profile.links.map((link) => <a class="button" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Research Experience</p>
+        <h2>Internships and research appointments.</h2>
+      </div>
+    </div>
+    <div class="grid three">
+      {featuredExperience.map((experience) => <ExperienceCard experience={experience} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Projects</p>
+        <h2>Research threads.</h2>
+      </div>
+      <a class="button" href={withBase("projects/")}>All projects</a>
+    </div>
+    <div class="grid three">
+      {featuredProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import ProjectCard from "@components/ProjectCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { projects } from "@data/projects";
+---
+
+<BaseLayout title="Projects">
+  <section>
+    <p class="eyebrow">Projects</p>
+    <h1>Research systems and applied threads.</h1>
+    <p class="lead">A compact map of the work behind the papers, internships, and applied collaborations.</p>
+  </section>
+
+  <section class="section">
+    <div class="grid two">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

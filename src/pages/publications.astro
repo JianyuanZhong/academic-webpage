@@ -1,0 +1,61 @@
+---
+import PublicationCard from "@components/PublicationCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { publications, themes } from "@data/publications";
+
+const selected = publications.filter((publication) => publication.selected);
+const byYear = [...publications].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+---
+
+<BaseLayout title="Publications">
+  <section>
+    <p class="eyebrow">Publications</p>
+    <h1>Selected and complete research output.</h1>
+    <p class="lead">Papers grouped for quick scanning by highlight, research theme, and year.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected</p>
+        <h2>Highlighted work</h2>
+      </div>
+    </div>
+    <div class="grid two">
+      {selected.map((publication) => <PublicationCard publication={publication} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Themes</p>
+        <h2>Research areas</h2>
+      </div>
+    </div>
+    <div class="grid">
+      {themes.map((theme) => (
+        <section class="card">
+          <h3>{theme}</h3>
+          <div class="grid">
+            {publications.filter((publication) => publication.theme === theme).map((publication) => (
+              <PublicationCard publication={publication} compact />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">All</p>
+        <h2>Reverse chronological list</h2>
+      </div>
+    </div>
+    <div class="grid">
+      {byYear.map((publication) => <PublicationCard publication={publication} />)}
+    </div>
+  </section>
+</BaseLayout>

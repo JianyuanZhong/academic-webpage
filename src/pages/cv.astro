@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { withBase } from "@utils/paths";
+
+const cvHref = withBase("assets/Jianyuan_Zhong_CV_202605.pdf");
+---
+
+<BaseLayout title="CV">
+  <section>
+    <p class="eyebrow">CV</p>
+    <h1>Curriculum vitae.</h1>
+    <p class="lead">Download or open the current academic CV as a PDF.</p>
+    <div class="actions">
+      <a class="button primary" href={cvHref} target="_blank" rel="noreferrer">Open CV</a>
+      <a class="button" href={cvHref} download>Download PDF</a>
+    </div>
+  </section>
+</BaseLayout>
