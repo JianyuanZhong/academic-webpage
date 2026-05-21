@@ -37,10 +37,6 @@ export const profile = {
       text: "Solve-Detect-Verify accepted to ACL 2026.",
     },
     {
-      date: "2026",
-      text: "FAME released as an arXiv preprint on trajectory-aware scientific impact forecasting.",
-    },
-    {
       date: "2025",
       text: "Dyve accepted to EMNLP 2025.",
     },
