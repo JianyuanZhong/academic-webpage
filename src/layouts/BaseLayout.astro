@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import { profile } from "@data/profile";
+import { withBase } from "@utils/paths";
+
+const {
+  title = profile.name,
+  description = profile.bio,
+} = Astro.props;
+
+const navItems = [
+  { label: "Home", href: "" },
+  { label: "Publications", href: "publications/" },
+  { label: "Projects", href: "projects/" },
+  { label: "CV", href: "cv/" },
+  { label: "Contact", href: "contact/" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title === profile.name ? title : `${title} | ${profile.name}`}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href={withBase("")}>{profile.name}</a>
+          <div class="nav-links">
+            {navItems.map((item) => <a href={withBase(item.href)}>{item.label}</a>)}
+          </div>
+        </nav>
+      </header>
+      <main class="page">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        © {new Date().getFullYear()} {profile.name}. Built as a static academic portfolio.
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+---
+import type { Project } from "@data/projects";
+
+const { project } = Astro.props as { project: Project };
+---
+
+<article class="card">
+  <h3>{project.title}</h3>
+  <p class="muted">{project.summary}</p>
+  <div class="tag-list">
+    {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+  {project.linkHref && <p><a class="button" href={project.linkHref}>{project.linkLabel ?? "Learn more"}</a></p>}
+</article>

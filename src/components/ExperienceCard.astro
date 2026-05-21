@@ -1,0 +1,13 @@
+---
+import type { Experience } from "@data/experience";
+
+const { experience } = Astro.props as { experience: Experience };
+---
+
+<article class="card">
+  <div class="theme-label">{experience.period}</div>
+  <h3>{experience.organization}</h3>
+  <p class="publication-meta">{experience.role} · {experience.location}</p>
+  {experience.supervisor && <p class="publication-meta">Supervisor: {experience.supervisor}</p>}
+  <p class="muted">{experience.summary}</p>
+</article>

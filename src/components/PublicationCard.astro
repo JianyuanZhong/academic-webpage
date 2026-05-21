@@ -1,0 +1,23 @@
+---
+import type { Publication } from "@data/publications";
+
+type Props = {
+  publication: Publication;
+  compact?: boolean;
+};
+
+const { publication, compact = false } = Astro.props;
+---
+
+<article class:list={["card", publication.selected && "highlight"]}>
+  <div class="theme-label">{publication.theme}</div>
+  <h3>{publication.title}</h3>
+  <p class="publication-meta">{publication.authors}</p>
+  <p class="publication-meta"><strong>{publication.venue}</strong> · {publication.year}</p>
+  {publication.note && <p class="muted">{publication.note}</p>}
+  {!compact && publication.links && publication.links.length > 0 && (
+    <div class="link-row">
+      {publication.links.map((link) => <a class="button" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
+    </div>
+  )}
+</article>
