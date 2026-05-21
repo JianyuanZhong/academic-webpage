@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 
 const files = {
   home: readFileSync("dist/index.html", "utf8"),
@@ -21,6 +22,20 @@ const assertions = [
 ];
 
 const failures = assertions.filter(([passed]) => !passed).map(([, message]) => message);
+
+const pdfText = spawnSync("pdftotext", ["public/assets/Jianyuan_Zhong_CV_202605.pdf", "-"], {
+  encoding: "utf8",
+});
+
+if (pdfText.error) {
+  failures.push(`pdftotext is required for CV PDF verification: ${pdfText.error.message}`);
+} else if (pdfText.status !== 0) {
+  failures.push(`CV PDF text extraction failed: ${pdfText.stderr.trim()}`);
+} else if (/\+852|9340\s*8296/.test(pdfText.stdout)) {
+  failures.push("CV PDF does not include phone number");
+} else if (!/PH\.D\.\s+CANDIDATE/i.test(pdfText.stdout)) {
+  failures.push("CV PDF identifies Jianyuan as a Ph.D. candidate");
+}
 
 if (failures.length > 0) {
   console.error("Content verification failed:");
