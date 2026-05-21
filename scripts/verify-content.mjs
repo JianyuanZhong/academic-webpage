@@ -16,6 +16,8 @@ const assertions = [
   [files.home.includes("Solve-Detect-Verify"), "homepage lists Solve-Detect-Verify"],
   [files.home.includes("FAME"), "homepage lists FAME"],
   [files.home.includes("Ant Group - InclusionAI"), "homepage lists Ant Group - InclusionAI"],
+  [files.home.includes("Prof. Junbo Zhao"), "homepage identifies Junbo Zhao as professor"],
+  [!files.home.includes("Dr. Junbo Zhao"), "homepage does not identify Junbo Zhao as doctor"],
   [files.publications.includes("ICML 2026"), "publications page includes ICML 2026"],
   [files.publications.includes("Scientific Discovery"), "publications page includes scientific discovery theme"],
   [files.publications.includes("Reasoning And Verification"), "publications page includes theme grouping"],
@@ -40,6 +42,10 @@ if (pdfText.error) {
   failures.push("CV PDF does not include phone number");
 } else if (!/PH\.D\.\s+CANDIDATE/i.test(pdfText.stdout)) {
   failures.push("CV PDF identifies Jianyuan as a Ph.D. candidate");
+} else if (!/Supervisor:\s+Prof\.\s+Junbo\s+Zhao/.test(pdfText.stdout)) {
+  failures.push("CV PDF identifies Junbo Zhao as professor");
+} else if (/Supervisor:\s+Dr\.\s+Junbo\s+Zhao/.test(pdfText.stdout)) {
+  failures.push("CV PDF does not identify Junbo Zhao as doctor");
 }
 
 if (failures.length > 0) {

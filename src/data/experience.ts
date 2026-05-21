@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
     organization: "Ant Group - InclusionAI",
     location: "Hangzhou, China",
     period: "Mar 2026 - Present",
-    supervisor: "Dr. Junbo Zhao",
+    supervisor: "Prof. Junbo Zhao",
     summary: "Agentic post-training for diffusion language models, including task harnesses, sandbox environments, SFT trajectory collection, and distributed on-policy training.",
   },
   {

@@ -35,6 +35,7 @@ describe("site data", () => {
     expect(organizations).toContain("Ant Group - InclusionAI");
     expect(organizations).toContain("Foundation Model Department, Huawei Hong Kong Research Center");
     expect(organizations).toContain("Quebec Artificial Intelligence Institute - Mila");
+    expect(experiences.find((experience) => experience.organization === "Ant Group - InclusionAI")?.supervisor).toBe("Prof. Junbo Zhao");
   });
 
   it("includes project cards for the main research threads", () => {
