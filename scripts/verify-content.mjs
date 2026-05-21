@@ -11,11 +11,16 @@ const files = {
 
 const assertions = [
   [files.home.includes("Ph.D. candidate"), "homepage identifies Jianyuan as a Ph.D. candidate"],
+  [files.home.includes("Scalable verifiable learning"), "homepage leads with scalable verifiable learning"],
+  [files.home.includes("long-horizon agentic thinking"), "homepage leads with long-horizon agentic thinking"],
   [files.home.includes("Solve-Detect-Verify"), "homepage lists Solve-Detect-Verify"],
+  [files.home.includes("FAME"), "homepage lists FAME"],
   [files.home.includes("Ant Group - InclusionAI"), "homepage lists Ant Group - InclusionAI"],
   [files.publications.includes("ICML 2026"), "publications page includes ICML 2026"],
+  [files.publications.includes("Scientific Discovery"), "publications page includes scientific discovery theme"],
   [files.publications.includes("Reasoning And Verification"), "publications page includes theme grouping"],
-  [files.projects.includes("Dynamic Generative Process Verification"), "projects page includes verification project"],
+  [files.projects.includes("Adaptive Verification and Inference-Time Control"), "projects page includes verification project"],
+  [files.projects.includes("Scientific Discovery and Impact Forecasting"), "projects page includes scientific discovery project"],
   [files.cv.includes("Jianyuan_Zhong_CV_202605.pdf"), "CV page links to CV PDF"],
   [files.contact.includes("Google Scholar"), "contact page links Google Scholar"],
   [!Object.values(files).join("\n").includes("+852"), "public site does not include phone number"],

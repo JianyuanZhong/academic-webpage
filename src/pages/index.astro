@@ -10,7 +10,7 @@ import { publications } from "@data/publications";
 import { withBase } from "@utils/paths";
 
 const selectedPublications = publications.filter((publication) => publication.selected);
-const featuredProjects = projects.slice(0, 3);
+const featuredProjects = projects.slice(0, 4);
 const featuredExperience = experiences.filter((experience) =>
   [
     "Ant Group - InclusionAI",
@@ -39,7 +39,7 @@ const featuredExperience = experiences.filter((experience) =>
     <div class="section-heading">
       <div>
         <p class="eyebrow">Research Focus</p>
-        <h2>Learning to reason through processes.</h2>
+        <h2>A stack for long-horizon agentic thinking.</h2>
       </div>
     </div>
     <div class="grid three">
@@ -51,7 +51,7 @@ const featuredExperience = experiences.filter((experience) =>
     <div class="section-heading">
       <div>
         <p class="eyebrow">Selected Work</p>
-        <h2>Recent papers and systems.</h2>
+        <h2>From verification to control to learning.</h2>
       </div>
       <a class="button" href={withBase("publications/")}>All publications</a>
     </div>
@@ -95,7 +95,7 @@ const featuredExperience = experiences.filter((experience) =>
     <div class="section-heading">
       <div>
         <p class="eyebrow">Projects</p>
-        <h2>Research threads.</h2>
+        <h2>Building the verifiable learning loop.</h2>
       </div>
       <a class="button" href={withBase("projects/")}>All projects</a>
     </div>

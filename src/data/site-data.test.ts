@@ -8,6 +8,8 @@ describe("site data", () => {
   it("uses the approved public identity", () => {
     expect(profile.name).toBe("Jianyuan Zhong");
     expect(profile.title).toContain("Ph.D. candidate");
+    expect(profile.tagline).toContain("Scalable verifiable learning");
+    expect(profile.tagline).toContain("long-horizon agentic thinking");
     expect("phone" in profile.contact).toBe(false);
     expect(profile.links.some((link) => link.label === "Google Scholar")).toBe(true);
     expect(profile.links.some((link) => link.label === "DBLP")).toBe(true);
@@ -17,6 +19,7 @@ describe("site data", () => {
     const selectedTitles = publications.filter((paper) => paper.selected).map((paper) => paper.title);
     expect(selectedTitles).toContain("Stabilizing Reinforcement Learning for Diffusion Language Models");
     expect(selectedTitles).toContain("Solve-Detect-Verify: Inference-Time Scaling with Flexible Generative Verifier");
+    expect(selectedTitles).toContain("FAME: Forecasting Academic Impact via Continuous-Time Manifold Evolution");
     expect(selectedTitles).toContain("Mathesis: Towards Formal Theorem Proving from Natural Languages");
     expect(selectedTitles).toContain("Dyve: Thinking Fast and Slow for Dynamic Process Verification");
   });
@@ -36,7 +39,7 @@ describe("site data", () => {
 
   it("includes project cards for the main research threads", () => {
     expect(projects.map((project) => project.id)).toEqual(
-      expect.arrayContaining(["agentic-dllm-post-training", "formal-reasoning", "dynamic-process-verification"])
+      expect.arrayContaining(["agentic-dllm-post-training", "scientific-discovery", "formal-reasoning", "dynamic-process-verification"])
     );
   });
 });

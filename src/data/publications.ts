@@ -4,7 +4,13 @@ export type Publication = {
   authors: string;
   venue: string;
   year: number;
-  theme: "Diffusion Language Models" | "Reasoning And Verification" | "Dialogue Systems" | "Speech And Multimodal Learning" | "AI For Design";
+  theme:
+    | "Diffusion Language Models"
+    | "Reasoning And Verification"
+    | "Scientific Discovery"
+    | "Dialogue Systems"
+    | "Speech And Multimodal Learning"
+    | "AI For Design";
   selected?: boolean;
   note?: string;
   links?: { label: string; href: string }[];
@@ -19,7 +25,7 @@ export const publications: Publication[] = [
     year: 2026,
     theme: "Diffusion Language Models",
     selected: true,
-    note: "Accepted; RL post-training for diffusion language models.",
+    note: "Accepted; stable RL for diffusion language models under noisy long-horizon feedback.",
     links: [{ label: "arXiv", href: "https://arxiv.org/abs/2603.06743" }],
   },
   {
@@ -30,7 +36,21 @@ export const publications: Publication[] = [
     year: 2026,
     theme: "Reasoning And Verification",
     selected: true,
-    note: "Flexible generative verifier for inference-time scaling.",
+    note: "Verifier-guided inference-time control for stopping, refinement, and compute allocation.",
+  },
+  {
+    id: "fame",
+    title: "FAME: Forecasting Academic Impact via Continuous-Time Manifold Evolution",
+    authors: "Jianrong Ding, Jianyuan Zhong, Zhengyan Shi, Qiang Xu",
+    venue: "arXiv 2026",
+    year: 2026,
+    theme: "Scientific Discovery",
+    selected: true,
+    note: "Trajectory-aware scientific evaluation with verified knowledge-flow graphs and dynamic topic manifolds.",
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/pdf/2605.07208" },
+      { label: "Code", href: "https://github.com/RafaDD/FAME" },
+    ],
   },
   {
     id: "mathesis",
@@ -41,7 +61,7 @@ export const publications: Publication[] = [
     year: 2025,
     theme: "Reasoning And Verification",
     selected: true,
-    note: "Formal theorem proving from natural language.",
+    note: "Autoformalization and Lean-based proof as a machine-checkable endpoint for reasoning.",
   },
   {
     id: "dyve",
@@ -51,7 +71,7 @@ export const publications: Publication[] = [
     year: 2025,
     theme: "Reasoning And Verification",
     selected: true,
-    note: "Dynamic generative process reward modeling.",
+    note: "Adaptive fast/slow process verification for first-error localization.",
   },
   {
     id: "reasoning-scaffolding",

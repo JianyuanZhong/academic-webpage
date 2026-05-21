@@ -9,13 +9,14 @@ export const profile = {
   affiliation: "Department of Computer Science & Engineering, The Chinese University of Hong Kong",
   location: "Hong Kong SAR",
   email: "chungginyun@gmail.com",
-  tagline: "Generative models for reasoning, verification, and complex decision-making.",
+  tagline: "Scalable verifiable learning for long-horizon agentic thinking in foundation models.",
   bio:
-    "I develop generative models that improve decision-making in complex optimization and reasoning settings, with recent work on diffusion language models, process verification, formal theorem proving, and agentic post-training.",
+    "I build systems that help foundation models think across long trajectories: plan, verify, repair, use tools, and learn from verifiable feedback across mathematical reasoning, diffusion language models, scientific discovery, and formal proof.",
   researchQuestions: [
-    "How can models learn effective representations of problems and solution processes?",
-    "How can process supervision from optimal decision sequences improve language and diffusion models?",
-    "How can trained generative models sample faster or more cost-efficient solutions?",
+    "How can long-horizon agents detect and repair failures before they compound?",
+    "How can verifier feedback control when models continue thinking, stop, or refine?",
+    "How can scientific discovery systems evaluate ideas by modeling how fields evolve over time?",
+    "How can verifiable rollouts become training data for stronger foundation models?",
   ],
   contact: {
     email: "chungginyun@gmail.com",
@@ -34,6 +35,10 @@ export const profile = {
     {
       date: "2026",
       text: "Solve-Detect-Verify accepted to ACL 2026.",
+    },
+    {
+      date: "2026",
+      text: "FAME released as an arXiv preprint on trajectory-aware scientific impact forecasting.",
     },
     {
       date: "2025",

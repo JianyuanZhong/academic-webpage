@@ -9,25 +9,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "dynamic-process-verification",
+    title: "Adaptive Verification and Inference-Time Control",
+    summary:
+      "Dyve, FlexiVe, and Solve-Detect-Verify study how agents can locate reasoning failures, allocate verifier budget, stop early, and refine only when useful.",
+    tags: ["Process verification", "Generative verifier", "Inference-time scaling"],
+  },
+  {
     id: "agentic-dllm-post-training",
     title: "Agentic Post-Training for Diffusion Language Models",
     summary:
-      "End-to-end infrastructure and algorithms for task-specific harnesses, sandbox environments, SFT trajectory collection, and distributed on-policy training for diffusion language models.",
+      "Harnesses, sandbox environments, supervised rollout data, and distributed on-policy training for diffusion language models that must reason and act over long trajectories.",
     tags: ["Diffusion language models", "Agentic RL", "Post-training"],
   },
   {
-    id: "formal-reasoning",
-    title: "Formal Reasoning And Theorem Proving",
+    id: "scientific-discovery",
+    title: "Scientific Discovery and Impact Forecasting",
     summary:
-      "Research on automatic theorem proving and formal reasoning from natural language, including Mathesis and related verification pipelines.",
-    tags: ["Formal methods", "Theorem proving", "LLM reasoning"],
+      "FAME treats scientific evaluation as a long-horizon forecasting problem, modeling how ideas move through evolving research fields with verified knowledge-flow graphs and continuous-time manifolds.",
+    tags: ["Scientific discovery", "Impact forecasting", "Manifold learning"],
   },
   {
-    id: "dynamic-process-verification",
-    title: "Dynamic Generative Process Verification",
+    id: "formal-reasoning",
+    title: "Formal Reasoning and Machine-Checkable Proof",
     summary:
-      "Generative verifier methods for reasoning trajectories, including Dyve and Solve-Detect-Verify, designed to improve inference-time scaling and verification.",
-    tags: ["Process verification", "Generative verifier", "Inference-time scaling"],
+      "Mathesis and related pipelines that connect natural-language mathematical reasoning to Lean-based formal statements, proof search, and machine-checkable reliability.",
+    tags: ["Formal methods", "Theorem proving", "LLM reasoning"],
   },
   {
     id: "guided-dialogue-systems",
