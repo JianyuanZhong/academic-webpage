@@ -8,7 +8,7 @@ Build a modern personal academic website for Jianyuan Zhong as an Astro static s
 
 ## Goals
 
-- Present Jianyuan Zhong as a Ph.D. student and researcher working on generative models for reasoning, verification, agentic post-training, and complex decision-making.
+- Present Jianyuan Zhong as a Ph.D. candidate and researcher working on generative models for reasoning, verification, agentic post-training, and complex decision-making.
 - Make selected work easy to scan, especially Stabilizing Reinforcement Learning for Diffusion Language Models, Solve-Detect-Verify, Mathesis, and Dyve.
 - Show research internships prominently, including Ant Group/InclusionAI, Huawei Hong Kong Research Center, and Mila.
 - Provide a clean multi-page structure suitable for GitHub Pages.
@@ -35,14 +35,14 @@ The first version will include five top-level pages:
 The homepage should use a modern research-portfolio layout:
 
 - Top navigation: Home, Publications, Projects, CV, Contact.
-- Hero: Jianyuan Zhong, CUHK CSE Ph.D. student identity, concise research tagline, and the user-provided headshot.
+- Hero: Jianyuan Zhong, CUHK CSE Ph.D. candidate identity, concise research tagline, and the user-provided headshot.
 - Primary calls to action: Publications, Projects, CV.
 - Selected Work: four highlighted publications:
-  - Stabilizing Reinforcement Learning for Diffusion Language Models
+  - Stabilizing Reinforcement Learning for Diffusion Language Models, accepted to ICML 2026
   - Solve-Detect-Verify: Inference-Time Scaling with Flexible Generative Verifier
   - Mathesis: Towards Formal Theorem Proving from Natural Languages
   - Dyve: Thinking Fast and Slow for Dynamic Process Verification
-- News: compact recent updates, including ACL 2026, EMNLP 2025, and ICLR 2025 items.
+- News: compact recent updates, including ICML 2026, ACL 2026, EMNLP 2025, and ICLR 2025 items.
 - Research Experience: compact cards for Ant Group/InclusionAI, Huawei Hong Kong Research Center, and Mila.
 
 ## Content Sources
@@ -120,4 +120,3 @@ Before calling the site complete:
 ## Deployment
 
 Target GitHub Pages from this repository. Prefer an Astro build that outputs static files under `dist/`, with a clear deploy path documented in the implementation plan.
-
