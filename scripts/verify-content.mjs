@@ -11,18 +11,17 @@ const files = {
 
 const assertions = [
   [files.home.includes("Ph.D. candidate"), "homepage identifies Jianyuan as a Ph.D. candidate"],
-  [files.home.includes("Scalable verifiable learning"), "homepage leads with scalable verifiable learning"],
-  [files.home.includes("long-horizon agentic thinking"), "homepage leads with long-horizon agentic thinking"],
+  [files.home.includes("Verifiable learning and diffusion language models"), "homepage leads with the two research directions"],
+  [files.home.includes("Verifiable learning for recursive self-improvement"), "homepage includes the verifiable-learning direction"],
+  [files.home.includes("Diffusion language models for effective test-time scaling"), "homepage includes the diffusion-LM direction"],
   [files.home.includes("Solve-Detect-Verify"), "homepage lists Solve-Detect-Verify"],
-  [files.home.includes("FAME"), "homepage lists FAME"],
-  [files.home.includes("Ant Group - InclusionAI"), "homepage lists Ant Group - InclusionAI"],
-  [files.home.includes("Prof. Junbo Zhao"), "homepage identifies Junbo Zhao as professor"],
-  [!files.home.includes("Dr. Junbo Zhao"), "homepage does not identify Junbo Zhao as doctor"],
+  [files.home.includes("Alipay / Ant Group Research Institute - AGI Research Center"), "homepage lists the current Ant Group research role"],
+  [files.home.includes("9M-token multi-agent trajectories"), "homepage includes the current long-horizon trajectory work"],
   [files.publications.includes("ICML 2026"), "publications page includes ICML 2026"],
   [files.publications.includes("Scientific Discovery"), "publications page includes scientific discovery theme"],
   [files.publications.includes("Reasoning And Verification"), "publications page includes theme grouping"],
-  [files.projects.includes("Adaptive Verification and Inference-Time Control"), "projects page includes verification project"],
-  [files.projects.includes("Scientific Discovery and Impact Forecasting"), "projects page includes scientific discovery project"],
+  [files.projects.includes("Verifiable Learning for Recursive Self-Improvement"), "projects page includes recursive self-improvement work"],
+  [files.projects.includes("Diffusion LMs for Efficient Test-Time Scaling"), "projects page includes diffusion LM work"],
   [files.cv.includes("Jianyuan_Zhong_CV_202605.pdf"), "CV page links to CV PDF"],
   [files.contact.includes("Google Scholar"), "contact page links Google Scholar"],
   [!Object.values(files).join("\n").includes("+852"), "public site does not include phone number"],
@@ -42,10 +41,6 @@ if (pdfText.error) {
   failures.push("CV PDF does not include phone number");
 } else if (!/PH\.D\.\s+CANDIDATE/i.test(pdfText.stdout)) {
   failures.push("CV PDF identifies Jianyuan as a Ph.D. candidate");
-} else if (!/Supervisor:\s+Prof\.\s+Junbo\s+Zhao/.test(pdfText.stdout)) {
-  failures.push("CV PDF identifies Junbo Zhao as professor");
-} else if (/Supervisor:\s+Dr\.\s+Junbo\s+Zhao/.test(pdfText.stdout)) {
-  failures.push("CV PDF does not identify Junbo Zhao as doctor");
 }
 
 if (failures.length > 0) {

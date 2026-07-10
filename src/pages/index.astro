@@ -13,7 +13,7 @@ const selectedPublications = publications.filter((publication) => publication.se
 const featuredProjects = projects.slice(0, 4);
 const featuredExperience = experiences.filter((experience) =>
   [
-    "Ant Group - InclusionAI",
+    "Alipay / Ant Group Research Institute - AGI Research Center",
     "Foundation Model Department, Huawei Hong Kong Research Center",
     "Quebec Artificial Intelligence Institute - Mila",
   ].includes(experience.organization)
@@ -39,11 +39,21 @@ const featuredExperience = experiences.filter((experience) =>
     <div class="section-heading">
       <div>
         <p class="eyebrow">Research Focus</p>
-        <h2>A stack for long-horizon agentic thinking.</h2>
+        <h2>Two directions, one verifiable learning loop.</h2>
       </div>
     </div>
-    <div class="grid three">
-      {profile.researchQuestions.map((question) => <div class="card"><p>{question}</p></div>)}
+    <p class="section-lead">Across both directions, I care about the same question: how can models use more interaction and more test-time compute to produce progress that is measurable, reliable, and worth compounding?</p>
+    <div class="grid two">
+      {profile.researchDirections.map((direction) => (
+        <article class:list={["card", "direction-card", direction.id]}>
+          <div class="theme-label">{direction.label}</div>
+          <h3>{direction.title}</h3>
+          <p class="muted">{direction.summary}</p>
+          <div class="tag-list">
+            {direction.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -51,7 +61,7 @@ const featuredExperience = experiences.filter((experience) =>
     <div class="section-heading">
       <div>
         <p class="eyebrow">Selected Work</p>
-        <h2>From verification to control to learning.</h2>
+        <h2>Evidence for the two directions.</h2>
       </div>
       <a class="button" href={withBase("publications/")}>All publications</a>
     </div>
@@ -95,7 +105,7 @@ const featuredExperience = experiences.filter((experience) =>
     <div class="section-heading">
       <div>
         <p class="eyebrow">Projects</p>
-        <h2>Building the verifiable learning loop.</h2>
+        <h2>From verifiers to systems co-design.</h2>
       </div>
       <a class="button" href={withBase("projects/")}>All projects</a>
     </div>

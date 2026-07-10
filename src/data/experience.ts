@@ -18,17 +18,16 @@ export type Education = {
 export const experiences: Experience[] = [
   {
     role: "Research Intern",
-    organization: "Ant Group - InclusionAI",
+    organization: "Alipay / Ant Group Research Institute - AGI Research Center",
     location: "Hangzhou, China",
     period: "Mar 2026 - Present",
-    supervisor: "Prof. Junbo Zhao",
-    summary: "Agentic post-training for diffusion language models, including task harnesses, sandbox environments, SFT trajectory collection, and distributed on-policy training.",
+    summary: "Agentic RL infrastructure; verifiable AI4S auto-research harnesses; and efficient diffusion LM inference, including self-evolving harnesses, 9M-token multi-agent trajectories, layered rewards, and DFlash-inspired decoding.",
   },
   {
     role: "Research Intern",
     organization: "Foundation Model Department, Huawei Hong Kong Research Center",
     location: "Hong Kong SAR",
-    period: "Mar 2025 - Mar 2026",
+    period: "Mar 2025 - Feb 2026",
     supervisor: "Dr. Zhenguo Li",
     summary: "Formal reasoning, automatic theorem proving, and diffusion language models.",
   },

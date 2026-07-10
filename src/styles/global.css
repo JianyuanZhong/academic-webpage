@@ -120,6 +120,12 @@ h3 {
   max-width: 720px;
 }
 
+.section-lead {
+  color: var(--muted);
+  max-width: 820px;
+  margin: -6px 0 22px;
+}
+
 .hero-photo {
   width: min(260px, 70vw);
   aspect-ratio: 1;
@@ -190,6 +196,18 @@ h3 {
 
 .card.highlight {
   border-top: 4px solid var(--blue);
+}
+
+.direction-card {
+  border-top: 4px solid var(--blue);
+}
+
+.direction-card.diffusion-language-models {
+  border-top-color: var(--teal);
+}
+
+.direction-card h3 {
+  margin-top: 6px;
 }
 
 .muted {
