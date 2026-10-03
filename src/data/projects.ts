@@ -10,6 +10,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "verifiable-rsi",
+    linkLabel: "Research Foundry live demo",
+    linkHref: "https://jianyuanzhong.github.io/research-foundry-dashboard/",
     title: "Verifiable Learning for Recursive Self-Improvement",
     summary:
       "I build bounded loops in which agents propose, execute, verify, and learn. This includes layered reward signals, anti-hacking checks, and self-evolving task and evaluation harnesses for auto-research across AI4S and mathematical reasoning.",
